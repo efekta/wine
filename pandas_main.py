@@ -11,40 +11,33 @@ def fetch_wines():
     return wines
 
 def fetch_wines_new():
-    wines_all = ('Красные вина', 'Белые вина', 'Напитки')
     wines_catalog = {}
-
+    wine_catalog = []
     excel_data_df = pandas.read_excel('wine_new.xlsx')
-    wines = excel_data_df.to_dict(orient='records')
-
-    print(pprint(wines))
-
+    wines = excel_data_df.to_dict(orient='records') #список словарей
+    # print(type(wines))
+    print(wines)
     for wine in wines:
         # print(wine)
-        for key, item in wine.items():
-            category = wine['Категория']
-            # print(category)
-            if category == wines_all[1]:
-                print(category == wines_all[1])
-                wines_catalog[category] = wine
+        category = wine['Категория']
+        print(category)
+        name = wine['Название']
+        print(name)
+        print(wine.values())
+        wine_list = wine
+        wines_catalog[category] = wine_list
         print(wines_catalog)
-    # print(pprint(wines_all))
-    # print(wines)
-    # print(type(wines))
-    # for wine in wines:
-    #     wine_item = dict(wine)
-    #     # print(wine)
-    #     category = wine['Категория']
-    #     print(category)
-    #     print(type(category))
-    #     # print(wines_all[category])
-    #     wines_all[category] = wine_item
-    # print(type(wines_all))
-    # print(wines_all)
-    # # print('\n')
-    # # print('\n')
-    # # print('\n')
-    # # pprint(wines_all)
+        break
+    #     wine_catalog.append(wine)
+    # print(wine_catalog)
+        # wines_catalog[category] = wine
+    # print(wines_catalog)
+        # break
+        # break
+        # for key, item in wine.items():
+        #     print(key)
+        #     print(item)
+
 
 
 
