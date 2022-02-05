@@ -34,9 +34,9 @@ def fetch_wines_catalog():
 catalog_wines = fetch_wines_catalog()
 
 
-def fetch_wines_category(catalog_wines):
-    for key, item in catalog_wines.items():
-        print(key)
-        print(item)
-
-pprint(fetch_wines_category(catalog_wines))
+# def fetch_wines_category(catalog_wines):
+#     for key, item in catalog_wines.items():
+#         print(key)
+#         print(item)
+#
+# pprint(fetch_wines_category(catalog_wines))

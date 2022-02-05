@@ -126,8 +126,12 @@
 
 				<div class="col-lg-4 mb-5 col-md-6">
 					<div class="wine_v_1 text-center pb-4 pt-5">
-						<img src="images/{{wine['Картинка']}}" alt="Image"
-						     class="img-fluid">
+						{% if wine['Картинка'] %}
+						  <img src="images/{{wine['Картинка']}}" class="img-fluid" alt="">
+						{% else %}
+						  <img src="https://dvmn.org/filer/canonical/1569944855/354/" class="img-fluid" alt="">
+						{% endif %}
+
 						<div>
 							<h3 class="heading mt-3 mb-3 text-dark">
 								{{wine['Название']}}
