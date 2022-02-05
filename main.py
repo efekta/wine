@@ -1,7 +1,8 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from custom import age_winery_calc
-from pandas_main import fetch_wines
+from age_winery_calc import age_winery_calc
+from pandas_main import fetch_wines, fetch_wines_catalog
+
 
 env = Environment(
     loader=FileSystemLoader('.'),
@@ -9,15 +10,15 @@ env = Environment(
 )
 
 age_winery = str(age_winery_calc())
-wines = fetch_wines()
-
-
+# wines = fetch_wines()
+catalog_wines = fetch_wines_catalog()
 template = env.get_template('template.html')
 
 
 rendered_page = template.render(
     age_winery=age_winery,
-    wines=wines,
+    # wines=wines,
+    catalog_wines=catalog_wines,
 )
 
 with open('index.html', 'w', encoding="utf8") as file:
