@@ -15,5 +15,5 @@ def fetch_wines_catalog():
     for wine in wines:
         category = wine['Категория']
         catalog_wines[category].append(wine)
-    catalog_wines = collections.OrderedDict(sorted(catalog_wines.items()))
-    return catalog_wines
+    catalog_wines_sorted = collections.OrderedDict(sorted(catalog_wines.items()))
+    return catalog_wines_sorted
