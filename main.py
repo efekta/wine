@@ -1,7 +1,7 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from age_winery_calc import age_winery_calc
 from pandas_main import fetch_wines_catalog
+import datetime
 
 
 env = Environment(
@@ -9,13 +9,14 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
-age_winery = str(age_winery_calc())
+
+AGE_WINERY = str(datetime.date.today().year - 1920)
 catalog_wines = fetch_wines_catalog()
 template = env.get_template('template.html')
 
 
 rendered_page = template.render(
-    age_winery=age_winery,
+    age_winery=AGE_WINERY,
     catalog_wines=catalog_wines,
 )
 
