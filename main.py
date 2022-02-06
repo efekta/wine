@@ -9,8 +9,8 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
-
-AGE_WINERY = str(datetime.date.today().year - 1920)
+YEAR_BIRTH_WINERY = 1920
+AGE_WINERY = str(datetime.date.today().year - YEAR_BIRTH_WINERY)
 catalog_wines = fetch_wines_catalog()
 template = env.get_template('template.html')
 
