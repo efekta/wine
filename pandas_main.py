@@ -2,8 +2,8 @@ import pandas
 import collections
 
 
-def fetch_wines_catalog():
-    excel_wines_catalog = pandas.read_excel('wine.xlsx',
+def fetch_wines_catalog(path_file):
+    excel_wines_catalog = pandas.read_excel(path_file,
                                       na_values=['N/A', 'NA'],
                                       keep_default_na=False,
                                       usecols=['Категория', 'Название',
