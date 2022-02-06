@@ -9,15 +9,16 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml'])
 )
 
-YEAR_BIRTH_WINERY = 1920
-AGE_WINERY = str(datetime.date.today().year - YEAR_BIRTH_WINERY)
-catalog_wines = fetch_wines_catalog()
+
+WINERY_YEAR_BIRTH = 1920
+WINERY_AGE = str(datetime.date.today().year - WINERY_YEAR_BIRTH)
+winery_catalog = fetch_wines_catalog()
 template = env.get_template('template.html')
 
 
 rendered_page = template.render(
-    age_winery=AGE_WINERY,
-    catalog_wines=catalog_wines,
+    winery_age=WINERY_AGE,
+    winery_catalog=winery_catalog,
 )
 
 with open('index.html', 'w', encoding="utf8") as file:

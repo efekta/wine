@@ -11,9 +11,9 @@ def fetch_wines_catalog():
                                                'Картинка', 'Акция']
                                       )
     wines = excel_wines_catalog.to_dict(orient='records')
-    catalog_wines = collections.defaultdict(list)
+    wines_catalog = collections.defaultdict(list)
     for wine in wines:
         category = wine['Категория']
-        catalog_wines[category].append(wine)
-    catalog_wines_sorted = collections.OrderedDict(sorted(catalog_wines.items()))
-    return catalog_wines_sorted
+        wines_catalog[category].append(wine)
+    sorted_wines_catalog = collections.OrderedDict(sorted(wines_catalog.items()))
+    return sorted_wines_catalog
