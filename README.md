@@ -18,11 +18,11 @@
 - Запустите сайт командой:
 
 ```
-  python3 main.py path_file/name_file.xlsx
+  python3 main.py file_path/name_file.xlsx
 ```
 
 ### Где указаны:
-путь и имя файла - path_file/name_file.xlsx
+путь и имя файла - file_path/name_file.xlsx
 
 название исполняемого файла с кодом - main.py
 

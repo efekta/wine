@@ -11,17 +11,17 @@ WINERY_AGE = str(datetime.date.today().year - WINERY_YEAR_BIRTH)
 
 def main():
     parser = argparse.ArgumentParser(description='Описание программы')
-    parser.add_argument('path_file', type=str, help='Путь к файлу',
+    parser.add_argument('file_path', type=str, help='Путь к файлу',
                         default='wine.xlsx')
     args = parser.parse_args()
-    path_file = args.path_file
+    file_path = args.file_path
 
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
     )
 
-    winery_catalog = fetch_wines_catalog(path_file)
+    winery_catalog = fetch_wines_catalog(file_path)
     template = env.get_template('template.html')
 
     rendered_page = template.render(
