@@ -21,7 +21,6 @@ def main():
         autoescape=select_autoescape(['html', 'xml'])
     )
 
-
     winery_catalog = fetch_wines_catalog(path_file)
     template = env.get_template('template.html')
 
